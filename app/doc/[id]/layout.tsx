@@ -6,7 +6,7 @@ function DocLayout({children, params:{id}}: {
 }) {
     auth.protect();
   return (
-    <div>{children}}</div>
+    <div>{children}</div>
   )
 }
 export default DocLayout

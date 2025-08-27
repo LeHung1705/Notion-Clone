@@ -10,6 +10,7 @@ function LiveBlocksProvider({children}:
     }
   return (
     <LiveblocksProvider
+        throttle={16}
         authEndpoint = {"/auth-endpoint"}
     >
         {children}
