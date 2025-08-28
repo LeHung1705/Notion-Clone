@@ -3,17 +3,19 @@ import {
     RoomProvider as RoomProviderWrapper,
     ClientSideSuspense,
   } from "@liveblocks/react/suspense";
+import LoadingSpinner from "./LoadingSpinner";
 
 function RoomProvider({roomId, children}: {roomId: string, children: React.ReactNode}) {
   return (
     <RoomProviderWrapper
         id={roomId}
         initialPresence={{ cursor: null }}
-        initialStorage={{}}
     >
         <ClientSideSuspense fallback={<LoadingSpinner/>}>
 
-        {children}
+            <LiveCursorProvider>
+                {children}
+            </LiveCursorProvider>
         </ClientSideSuspense>
     </RoomProviderWrapper>
   )
