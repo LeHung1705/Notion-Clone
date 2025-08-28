@@ -2,6 +2,7 @@
 
 import { useMyPresence, useOthers } from "@liveblocks/react";
 import { use } from "react";
+import FollowPointer from "./FollowPointer";
 
 
 function LiveCursorProvider({children}: {children: React.ReactNode}) {
